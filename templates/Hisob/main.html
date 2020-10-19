@@ -1,0 +1,630 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UYLARBOZORI - Xar qanday turdagi ko'chmas mulk e'lonlari!</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="UYLARBOZORI Xar qanday turdagi ko'chmas mulk e'lonlari!">
+	<meta name="keywords" content="UYLARBOZORI, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Font-->
+
+	<!-- Favicon -->   
+	<link href="{% static 'img/favicon.ico' %}" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/opensans-font.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+</head>
+<body>
+
+		<!-- Page Preloder -->
+		<div id="preloder">
+			<div class="loader"></div>
+		</div>
+		
+		<!-- Header section -->
+		<header class="header-section">
+			<div class="header-top">
+				<div class="container">
+					<d'8iv class="row">
+						<div class="col-lg-5 header-top-left">
+							<div class="top-info">
+								<i class="fa fa-phone"></i>
+								 (+998) 99 561 07 47
+							</div>
+							<div class="top-info">
+								<i class="fa fa-envelope"></i>
+								pardaqulov6838@gmail.com
+							</div>
+						</div>
+						<div class="col-lg-7   text-lg-right header-top-right">
+							<div class="top-social">
+								<a href=""><i class="fa fa-facebook"></i></a>
+								<a href=""><i class="fa fa-twitter"></i></a>
+								<a href=""><i class="fa fa-instagram"></i></a>
+								<a href=""><i class="fa fa-telegram"></i></a>
+								<a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+								<a href=""><i class="fa fa-odnoklassniki"></i></a>
+								<a href="" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-search" aria-hidden="true"></i></a>
+							</div>
+							<div class="user-panel">
+								<a href="../accounts/logout"><i class="fa fa-sign-out"></i> Chiqish</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="site-navbar">
+							<h1 class="logos site-logo">
+								<span class="spa-logo">UYLAR</span>
+								<span class="spas-logo">BOZORI</span>
+							</h1>
+							<div class="nav-switch">
+								<i class="fa fa-bars"></i>
+							</div>
+							<ul class="main-menu">
+								<li><a href="/{{ username }}">Bosh sahifa</a></li>
+								<li><a href="categories">E'lonlar</a></li>
+								<li><a href="main">E'lon berish</a></li>
+								<li><a href="about">Biz Haqimizda</a></li>
+								<li><a href="blog">Blog</a></li>
+								<li><a href="contact">Aloqa</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header section end -->
+		<!-- Large modal -->
+	  
+	  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+				<!-- Filter form section -->
+		<div class="filter-search p-5">
+			<div class="container">
+				<form class="filter-form" method="GET" action="search">
+					<input type="text" name="keyvalue" placeholder="Ko'cha nomini, manzil raqamini yoki kalit so'zni kiriting">
+					<input type="hidden" name="viloyat2_id" id="viloyat2_id" value="0"/>
+					<input type="hidden" name="tuman2_id" id="tuman2_id" value="0"/>
+					<button type="submit" class="site-btn fs-submit">QIDIRUV</button>
+				</form>
+				<select class="viloyat2" name="viloyat">
+					<option disabled selected>Viloyatni tanlang</option>
+					{% for viloyat in viloyatlar %}
+					<option>{{ viloyat.viloyat }}</option>
+					{% endfor %}
+				</select>
+				<select id="tuman2" name="tuman">
+					<option disabled selected>Tuman(shahar)ni tanlang</option>
+				</select>
+			</div>
+		</div>
+		<!-- Filter form section end -->
+		  </div>
+		</div>
+	  </div>
+	  
+	
+	
+		<!-- Hero section -->
+		<section class="hero-section set-bg" data-setbg="{% static 'img/page-top-bg.jpg' %}">
+			<div class="container slidess text-white">
+	
+				<div class="row">
+	
+					<div class="bd-example col-lg-4 col-12 mb-5">
+						<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+						  <ol class="carousel-indicators">
+							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+						  </ol>
+						  <div class="carousel-inner" role="listbox">
+							<div class="carousel-item active">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e09%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e09%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22308.2890625%22%20y%3D%22170.1%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>First slide label</h3>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							  </div>
+							</div>
+							<div class="carousel-item">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e0d%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e0d%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22264.9453125%22%20y%3D%22170.1%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>Second slide label</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							  </div>
+							</div>
+						  </div>
+						  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						  </a>
+						</div>
+					  </div>
+					  
+					  <div class="bd-example col-lg-4 col-12 mb-5">
+						<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+						  <ol class="carousel-indicators">
+							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+						  </ol>
+						  <div class="carousel-inner" role="listbox">
+							<div class="carousel-item active">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e09%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e09%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22308.2890625%22%20y%3D%22170.1%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>First slide label</h3>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							  </div>
+							</div>
+							<div class="carousel-item">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e0d%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e0d%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22264.9453125%22%20y%3D%22170.1%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>Second slide label</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							  </div>
+							</div>
+						  </div>
+						  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						  </a>
+						</div>
+					  </div>
+					  
+					  <div class="bd-example col-lg-4 col-12 mb-5">
+						<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+						  <ol class="carousel-indicators">
+							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+						  </ol>
+						  <div class="carousel-inner" role="listbox">
+							<div class="carousel-item active">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e09%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e09%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22308.2890625%22%20y%3D%22170.1%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>First slide label</h3>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							  </div>
+							</div>
+							<div class="carousel-item">
+							  <img class="d-block w-100" data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [900x300]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22900%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20900%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1745c655e0d%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A45pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1745c655e0d%22%3E%3Crect%20width%3D%22900%22%20height%3D%22300%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22264.9453125%22%20y%3D%22170.1%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" height="400">
+							  <div class="carousel-caption d-none d-md-block">
+								<h3>Second slide label</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							  </div>
+							</div>
+						  </div>
+						  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						  </a>
+						</div>
+					  </div>
+					  
+				</div>
+	
+				<h2 class="text-center">E'lon berish</h2>
+				<div class="d-flex justify-content-center py-5">
+					<a href="about" class="site-btn">TAFSILOTLAR</a>
+				</div>
+			</div>
+		</section>
+		<!-- Hero section end -->
+	
+	<div class="page-content">
+		<div class="form-v1-content">
+			<div class="wizard-form">
+		        <form class="form-register" method="post">
+					{% csrf_token %}
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<p class="step-icon"><span>01</span></p>
+			            	<span class="step-text">E'lon xaqida</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">E'lon berish uchun so'rovnomani to'ldiring</h3>
+									<!-- <p>Siz e'lon uchun so'rovnomani to'ldirsangiz sizni e'loningizni kartangizdan pul yechilgan zaxotiyoq web-sitemizga chiqariladi!</p> -->
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Viloyat va tumanni tanlang</legend>
+											<select class="viloyat" name="viloyat">
+												<option disabled selected>Viloyatni tanlang</option>
+												{% for viloyat in viloyatlar %}
+												<option>{{ viloyat.viloyat }}</option>
+												{% endfor %}
+											</select>
+											<input type="hidden" name="viloyat_id" id="viloyat_id"/>
+											<select id="tuman" name="tuman">
+												<option disabled selected>Tuman(shahar)ni tanlang</option>
+											</select>
+											<input type="hidden" name="tuman_id" id="tuman_id"/>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>E'loningizni manzilini to'liq kiriting</legend>
+											<input type="text" class="form-control" id="address" name="address" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Telefon raqamingizni kiriting</legend>
+											<input type="hidden" name="email" value="{{user.email}}">
+											<input type="text" name="phone" id="phone" class="form-control" placeholder="+(998)00 000 00 00" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>E'loningizni barcha xususiyatlarini birma bir enter orqali kiriting!</legend>
+											<textarea name="xususiyati" class="form-control" id="xususiyati" cols="30" rows="10" required></textarea>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Batafsil</legend>
+											<textarea name="batafsil" class="form-control" id="batafsil" cols="30" rows="10" required></textarea>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row ">
+									<div class="form-holder form-holder-2">
+										<label class="special-label">Qisqacha savollarga javob bering:</label>
+										<select name="type" id="type">
+											<option disabled selected>E'loningiz turi</option>
+											{% for ann_type in ann_types %}
+											<option>{{ ann_type.name }}</option>
+											{% endfor %}
+										</select>
+										<input type="hidden" name="type_id" id="type_id"/>
+										<select name="view" id="view">
+											<option disabled selected>E'lon ko'rinishi</option>
+											{% for ann_view in ann_views %}
+											<option>{{ ann_view.name }}</option>
+											{% endfor %}
+										</select>
+										<input type="hidden" name="view_id" id="view_id"/>
+										<select name="condition" id="condition">
+											<option selected>E'loningiz xolati</option>
+											{% for cond in conds %}
+											<option>{{ cond.name }}</option>
+											{% endfor %}
+										</select>
+										<input type="hidden" name="condition_id" id="condition_id"/>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="file" class="form-control input-border" id="img1" name="img1" placeholder="Rasm yuklash" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="file" class="form-control input-border" id="img2" name="img2" placeholder="Rasm yuklash" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="file" class="form-control input-border" id="img3" name="img3" placeholder="Rasm yuklash" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="file" class="form-control input-border" id="img4" name="img4" placeholder="Rasm yuklash" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="file" class="form-control input-border" id="img5" name="img5" placeholder="Rasm yuklash" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Narxi</legend>
+											<input type="number" class="form-control" id="price" name="price" required>
+										</fieldset>
+									</div>
+								</div>
+								<!-- <div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>To'lovli yoki bepul?</legend>
+											<input type="checkbox" class="form-control" id="first-name" name="is_paid" required>
+										</fieldset>
+									</div>
+								</div> -->
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <!-- <h2>
+			            	<p class="step-icon"><span>02</span></p>
+			            	<span class="step-text">To'lov qilish</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">E'loningiz uchun to'lov qilish</h3>
+									<p>E'loningiz uchun avtomatik to'lov yechib olinadi , siz karta raqamingizni kiritishingiz kerak!</p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-1">
+										<input type="text" name="find_bank" id="find_bank" placeholder="8600 0829 4875 1278" class="form-control" required>
+									</div>
+								</div>
+								<div class="form-row-total">
+									<div class="form-row">
+				                		<div class="form-holder form-holder-2 form-holder-3">
+				                			<input type="radio" class="radio" name="bank-1" id="bank-1" value="bank-1" checked>
+				                			<label class="bank-images label-above bank-1-label" for="bank-1">
+				                				<img src="img/form-v1-1.png" alt="bank-1">
+				                			</label>
+											<input type="radio" class="radio" name="bank-2" id="bank-2" value="bank-2">
+											<label class="bank-images label-above bank-2-label" for="bank-2">
+												<img src="img/form-v1-2.png" alt="bank-2">
+											</label>
+											<input type="radio" class="radio" name="bank-3" id="bank-3" value="bank-3">
+											<label class="bank-images label-above bank-3-label" for="bank-3">
+												<img src="img/form-v1-3.png" alt="bank-3">
+											</label>
+				                		</div>
+				                	</div>
+				                	<div class="form-row">
+				                		<div class="form-holder form-holder-2 form-holder-3">
+				                			<input type="radio" class="radio" name="bank-4" id="bank-4" value="bank-4">
+				                			<label class="bank-images bank-4-label" for="bank-4">
+				                				<img src="img/form-v1-4.png" alt="bank-4">
+				                			</label>
+											<input type="radio" class="radio" name="bank-5" id="bank-5" value="bank-5">
+											<label class="bank-images bank-5-label" for="bank-5">
+												<img src="img/form-v1-5.png" alt="bank-5">
+											</label>
+											<input type="radio" class="radio" name="bank-6" id="bank-6" value="bank-6">
+											<label class="bank-images bank-6-label" for="bank-6">
+												<img src="img/form-v1-6.png" alt="bank-6">
+											</label>
+				                		</div>
+				                	</div>
+								</div>
+							</div>
+			            </section>
+			            SECTION 3
+			            <h2>
+			            	<p class="step-icon"><span>03</span></p>
+			            	<span class="step-text">E'loningiz uchun tariflar</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Bizning xizmatlar tariflari bilan tanishing</h3>
+									<p>Siz o'z e'loningizni Uylarbozori.uz orqali sifatli va arzon narxlarda berishingiz mumkin</p>
+								</div>
+								<div class="form-row">
+			                		<div class="form-holder form-holder-2">
+			                			<input type="radio" class="radio" name="radio1" id="plan-1" value="plan-1">
+			                			<label class="plan-icon plan-1-label" for="plan-1">
+		                					<img src="img/form-v1-icon-2.png" alt="pay-1">
+			                			</label>
+			                			<div class="plan-total">
+		                					<span class="plan-title">Gold tarifi narxi 300 000 UZS</span>
+		                					<p class="plan-text">Sizni e'loningiz 1-oy mobaynida bizning saytni asosiy oynalarida reklama qilnadi.</p>
+		                				</div>
+			                			<input type="radio" class="radio" name="radio1" id="plan-2" value="plan-2">
+			                			<label class="plan-icon plan-2-label" for="plan-2">
+			                					<img src="img/form-v1-icon-2.png" alt="pay-1">
+			                			</label>
+			                			<div class="plan-total">
+		                					<span class="plan-title">Silver tarifi narxi 100 000 UZS</span>
+		                					<p class="plan-text">Sizni e'loningiz 1-xaftada davomida bizning saytimizni asosiy oynasida turadi.</p>
+		                				</div>
+										<input type="radio" class="radio" name="radio1" id="plan-3" value="plan-3" checked>
+										<label class="plan-icon plan-3-label" for="plan-3">
+		                					<img src="img/form-v1-icon-3.png" alt="pay-2">
+										</label>
+										<div class="plan-total">
+		                					<span class="plan-title">Preimum tarifi narxi 5000 UZS</span>
+		                					<p class="plan-text">Sizni e'loningiz 1-kun mobaynida e'lonlar oynasida chiqadi.</p>
+		                				</div>
+			                		</div>
+			                	</div>
+							</div>
+						</section> -->
+						<div style="width: 60px;height: 90px;left: 400px;">
+							<input type="submit" value="OK" class="ok bg-success" style="display: block;height: 60px;width: 60px;border-radius: 100px;">
+							</a>
+						</div>
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer section -->
+	<footer class="footer-section set-bg" data-setbg="{% static 'img/footer-bg.jpg'%}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 footer-widget">
+					<h1 class="logos site-logo mb-4">
+						<span class="spa-logo">UYLAR</span>
+						<span class="spas-logo">BOZORI</span>
+					</h1>
+					<p>Uylarbozori.uz orqali siz uydan chiqmasdan turib, sifatli va qulay ko'chmas mulklarni sotib olasiz, xamda o'zingizdagi uy joylarni sotasiz, eng yaxshi biz orqali siz xar qanday turdagi uylarni ijaraga topa olasiz!</p>
+					<div class="social">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-telegram"></i></a>
+						<a href="#"><i class="fa fa-youtube-play"></i></a>
+						<a href="#"><i class="fa fa-odnoklassniki"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 footer-widget">
+					<div class="contact-widget">
+						<h5 class="fw-title">Biz bilan aloqa</h5>
+						<p><i class="fa fa-map-marker"></i>O'zbekiston hududi </p>
+						<p><i class="fa fa-phone"></i>(+998) 979199129 </p>
+						<p><i class="fa fa-phone"></i>(+998) 945319838 </p>
+						<p><i class="fa fa-phone"></i>(+998) 995610747 </p>
+						<p><i class="fa fa-envelope"></i>pardaqulov6838@gmail.com</p>
+						<p><i class="fa fa-clock-o"></i>Biz bilan o'zingiz istalgan vaqta bog'laning!</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 footer-widget">
+					<div class="double-menu-widget">
+						<h5 class="fw-title">Biz barcha joydamiz</h5>
+						<ul>
+							<li><a href="search?keyvalue=&viloyat_id=15&tuman_id=0">Toshkent shahri</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=11&tuman_id=0">Toshkent viloyati</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=9&tuman_id=0">Jizzax</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=6&tuman_id=0">Samarqand</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=14&tuman_id=0">Andijon</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=12&tuman_id=0">Namangan</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=13&tuman_id=0">Farg'ona</a></li>
+						</ul>
+						<ul>
+							<li><a href="search?keyvalue=&viloyat_id=1&tuman_id=0">Nukus</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=7&tuman_id=0">Qashqadaryo</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=8&tuman_id=0">Surxandaryo</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=4&tuman_id=0">Navoiy</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=5&tuman_id=0">Buxoro</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=3&tuman_id=0">Xorazm</a></li>
+							<li><a href="search?keyvalue=&viloyat_id=10&tuman_id=0">Sirdaryo</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- <div class="col-lg-3 col-md-6  footer-widget">
+					<div class="newslatter-widget">
+						<h5 class="fw-title">XABAR YUBORISH</h5>
+						<p>
+							Sizda biror savol bo'lsa bizga elektron pochtangizni yuboring o'zimiz siz bilan bog'lanamiz!</p>
+						<form class="footer-newslatter-form">
+							<input type="text" placeholder="Email address">
+							<button><i class="fa fa-send"></i></button>
+						</form>
+					</div>
+				</div> -->
+			</div>
+			<div class="container footer-bottom">
+				<div class="footer-nav">
+					<ul>
+						<li><a href="/{{ username }}">Bosh sahifa</a></li>
+						<li><a href="categories">E'lonlar</a></li>
+						<li><a href="main">E'lon berish</a></li>
+						<li><a href="about">Biz Haqimizda</a></li>
+						<li><a href="blog">Blog</a></li>
+						<li><a href="contact">Aloqa</a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Instant company &copy;<script>document.write(new Date().getFullYear());</script> Sayt tuzuvchilar | Suhrob Abduaxatov , Rahmatjon Ruslanov
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+                                        
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+	<script src="{% static 'js/jquery.steps.js' %}"></script>
+	<script src="{% static 'js/mains.js' %}"></script>
+	<script>
+		$(document).ready(function() {
+			var tuman_ids = [], selectedRegionIndex = 0;
+			var t = '{{ tumanlar|safe }}';
+			var tumanlar = JSON.parse(t);
+			$("select.viloyat2").change(function(){
+				selectedRegionIndex = $(".viloyat2 option:selected").index();
+				if (selectedRegionIndex > 1) selectedRegionIndex++;
+				var tuman = [];
+				for (var i = 0; i < tumanlar.length; i++){
+					if (selectedRegionIndex == tumanlar[i].fields.viloyat) {tuman.push(tumanlar[i].fields.name);}
+				}
+				var tuman_options = "";
+				for (var i = 0; i < tuman.length; i++){
+					tuman_options += "<option>" + tuman[i] + "</option>";
+				}
+				$("#tuman2").html(tuman_options);
+			});
+		   $("select.viloyat").change(function(){
+				selectedRegionIndex = $(".viloyat option:selected").index();
+				if (selectedRegionIndex > 1) selectedRegionIndex++;
+				var tuman = [];
+				for (var i = 0; i < tumanlar.length; i++){
+					if (selectedRegionIndex == tumanlar[i].fields.viloyat) {tuman_ids.push(tumanlar[i].pk);tuman.push(tumanlar[i].fields.name);}
+				}
+				var tuman_options = "";
+				for (var i = 0; i < tuman.length; i++){
+					tuman_options += "<option>" + tuman[i] + "</option>";
+				}
+				$("#tuman").html(tuman_options);
+				$("#viloyat_id").val(selectedRegionIndex);
+				selectedDistrictIndex = $("#tuman option:selected").index();
+				$("#tuman_id").val(tuman_ids[selectedDistrictIndex]);
+			});
+			$("#tuman").change(function(){
+				selectedDistrictIndex = $("#tuman option:selected").index();
+				$("#tuman_id").val(tuman_ids[selectedDistrictIndex]);
+			});
+			$("#type").change(function(){
+				selectedType = $("#type option:selected").index();
+				$("#type_id").val(selectedType);
+			});
+			$("#condition").change(function(){
+				selectedCond = $("#condition option:selected").index();
+				$("#condition_id").val(selectedCond);
+			});
+			$("#view").change(function(){
+				selectedView = $("#view option:selected").index();
+				$("#view_id").val(selectedView);
+			});
+	    });
+   </script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
